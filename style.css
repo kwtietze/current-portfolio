@@ -9,7 +9,7 @@
 }
 
 :root {
-    --header-color: #282B28;
+    --header-color: #201D1E;
     /* --orange: #D36135;
     --green: #282B28; */
     --orange: #EFEAE8;
@@ -182,7 +182,7 @@ header a {
 
 .loader-circle-text-container {
     margin: auto;
-    animation: loaderFade ease 2s;
+    /* animation: loaderFade ease 2s; */
 }
 
 .circle-text {
@@ -211,8 +211,8 @@ header a {
 /* about page styles */
 
 #about {
-    background: var(--green);
-    padding: 50px 20px;
+    background: var(--orange);
+    padding: 500px 20px 200px 20px;
     display: flex;
     justify-content: center;
     align-items: center;

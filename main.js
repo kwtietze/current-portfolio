@@ -75,21 +75,46 @@ links.forEach((link) => {
 
 gsap.registerPlugin(ScrollTrigger)
 
+// gsap.to('.loader-circle-text', {
+//     scrollTrigger: {
+//         trigger: '.loader-circle-text-container',
+//         toggleActions: 'restart pause pause reverse',
+//         start: 'center center',
+//         end: 'bottom top',
+//         scrub: true
+//     },
+//     width: 2000,
+//     duration: 1
+// })
+
 gsap.from('h2', {
     scrollTrigger: {
         trigger: 'h2',
-        toggleActions: 'restart reset restart none'
+        toggleActions: 'restart pause pause reverse',
+        start: 'top center',
+        end: 'center center',
+        scrub: true
     },
-    x: -200,
+    x: -100,
     opacity: 0,
-    duration: 1,
-    delay: 0.5,
+})
+
+gsap.to('#about', {
+    scrollTrigger: {
+        trigger: '#about',
+        toggleActions: 'restart pause pause reverse',
+        start: 'top top',
+        end: '20% top',
+    },
+    duration: 0.1,
+    background: '#201D1E'
 })
 
 gsap.to('.work-list-item', {
     scrollTrigger: {
         trigger: '.work-list',
-        toggleActions: 'restart reset restart reset'
+        toggleActions: 'restart reset restart reset',
+        start: 'top center'
     },
     opacity: 1,
     stagger: 0.2,
