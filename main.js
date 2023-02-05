@@ -42,8 +42,8 @@ function hideMenu() {
 
 // custom cursor
 
-let innerCursor = document.querySelector('.inner-cursor')
-let outerCursor = document.querySelector('.outer-cursor')
+let cursor = document.querySelector('.cursor')
+// let outerCursor = document.querySelector('.outer-cursor')
 
 document.addEventListener('mousemove', moveCursor)
 
@@ -52,22 +52,22 @@ function moveCursor(event) {
     let y = event.clientY
 
 
-    innerCursor.style.left = `${x}px`
-    innerCursor.style.top = `${y}px`
-    outerCursor.style.left = `${x}px`
-    outerCursor.style.top = `${y}px`
+    cursor.style.left = `${x}px`
+    cursor.style.top = `${y}px`
+    // outerCursor.style.left = `${x}px`
+    // outerCursor.style.top = `${y}px`
 }
 
-let links = Array.from(document.querySelectorAll('a, button, input'))
+let links = Array.from(document.querySelectorAll('a, button'))
 
 links.forEach((link) => {
     link.addEventListener('mouseover', () => {
-        innerCursor.classList.add('grow')
-        outerCursor.classList.add('hide')
+        cursor.classList.add('show')
+        // outerCursor.classList.add('hide')
     })
     link.addEventListener('mouseleave', () => {
-        innerCursor.classList.remove('grow')
-        outerCursor.classList.remove('hide')
+        cursor.classList.remove('show')
+        // outerCursor.classList.remove('hide')
     })
 })
 
@@ -75,39 +75,31 @@ links.forEach((link) => {
 
 gsap.registerPlugin(ScrollTrigger)
 
-// gsap.to('.loader-circle-text', {
-//     scrollTrigger: {
-//         trigger: '.loader-circle-text-container',
-//         toggleActions: 'restart pause pause reverse',
-//         start: 'center center',
-//         end: 'bottom top',
-//         scrub: true
-//     },
-//     width: 2000,
-//     duration: 1
-// })
 
-gsap.from('h2', {
+gsap.to('.about-scroll-col', {
     scrollTrigger: {
-        trigger: 'h2',
+        trigger: '.about-scroll-container',
         toggleActions: 'restart pause pause reverse',
-        start: 'top center',
-        end: 'center center',
-        scrub: true
+        start: 'bottom bottom',
+        scrub: true,
+        pin: true,
+        end: "+=2000"
     },
-    x: -100,
-    opacity: 0,
+    x: -(window.innerWidth),
+    ease: 'none'
 })
+
 
 gsap.to('#about', {
     scrollTrigger: {
         trigger: '#about',
         toggleActions: 'restart pause pause reverse',
-        start: 'top top',
-        end: '20% top',
+        start: 'top bottom',
+        end: 'top top',
+        scrub: true
     },
-    duration: 0.1,
-    background: '#201D1E'
+    background: '#201D1E',
+    ease: 'none'
 })
 
 gsap.to('.work-list-item', {

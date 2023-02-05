@@ -5,7 +5,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
-    cursor: none;
 }
 
 :root {
@@ -20,27 +19,30 @@
 
 }
 
-.inner-cursor {
+html {
+    overflow-x: hidden;
+}
+
+.cursor {
     position: fixed;
     left: 10px;
-    width: 10px;
-    height: 10px;
+    width: 50px;
+    height: 50px;
     transform: translate(-50%, -50%);
     background-color: #D36135;
     mix-blend-mode: difference;
     border-radius: 50%;
     pointer-events: none;
     transition: width 0.5s, height 0.5s;
-    z-index: 2;
+    z-index: 100;
+    display: none;
 }
 
-.inner-cursor.grow {
-    width: 30px;
-    height: 30px;
-    transition: width 0.5s, height 0.5ms;
+.cursor.show {
+    display: block;
 }
 
-.outer-cursor {
+/* .outer-cursor {
     position: fixed;
     left: 10px;
     width: 25px;
@@ -56,7 +58,7 @@
 
 .outer-cursor.hide {
     display: none;
-}
+} */
 
 
 section {
@@ -71,6 +73,7 @@ header {
     width: 100vw;
     padding: 10px;
     animation: loaderFade 4s;
+    z-index: 2;
 }
 
 header ul {
@@ -88,6 +91,7 @@ a {
 
 a:hover {
     color: var(--hover-color);
+    cursor: none;
 }
 
 header a {
@@ -106,6 +110,7 @@ header a {
 
 #menu-btn:hover {
     color: var(--hover-color);
+    cursor: none;
 }
 
 
@@ -121,11 +126,16 @@ header a {
     left: 0;
     transition: .5s;
     pointer-events: none;
-    z-index: 1;
+    z-index: 5;
 }
 
 .menu-header a {
     color: var(--orange);
+}
+
+.menu-header a:hover,
+.menu-header button:hover {
+    color: #D36135;
 }
 
 #close-menu-btn {
@@ -165,6 +175,7 @@ header a {
 .menu-list-item:hover {
     transform: translateX(20px);
     text-decoration: underline;
+    cursor: none;
 }
 
 
@@ -212,18 +223,45 @@ header a {
 
 #about {
     background: var(--orange);
-    padding: 500px 20px 200px 20px;
+    /* padding-bottom: 200vh; */
+}
+
+.about-scroll-container {
     display: flex;
-    justify-content: center;
+    width: 200vw;
+    overflow-x: hidden;
+}
+
+.about-scroll-col {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 h2 {
     color: var(--orange);
-    font-size: 75px;
-    font-weight: 600;
+    font-size: 50px;
+    font-weight: 300;
+    width: 80vw;
     max-width: 1200px;
+    line-height: 150%;
 }
+
+p {
+    line-height: 150%;
+    font-size: 24px;
+
+}
+
+
+.testimonial {
+    color: var(--orange);
+    max-width: 700px;
+    width: 80vw;
+}
+
 
 
 
@@ -348,6 +386,8 @@ input:focus {
 
 .submit-btn:hover {
     background-color: var(--hover-color);
+    color: var(--green);
+    cursor: none;
 }
 
 .social-container {
@@ -368,14 +408,14 @@ input:focus {
 
 @media only screen and (max-width: 1000px) {
     h2 {
-        font-size: 80px;
+        font-size: 50px;
     }
 
 }
 
 @media only screen and (max-width: 600px) {
     h2 {
-        font-size: 60px;
+        font-size: 40px;
     }
     
     .work-list-item {

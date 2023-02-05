@@ -10,8 +10,8 @@
     <title>Karl Tietze</title>
 </head>
 <body>
-    <div class="inner-cursor"></div>
-    <div class="outer-cursor"></div>
+    <div class="cursor"></div>
+    <!-- <div class="outer-cursor"></div> -->
     <div id="menu">
         <header class="menu-header">
             <ul>
@@ -57,9 +57,21 @@
         </div>
     </section>
     <section id="about">
-        <h2 class="about-text">
-            I’m a web developer from a creative background. I enjoy building unique web experiences at the intersection of beauty and function.
-        </h2>
+        <div class="about-scroll-container">
+            <div class="about-scroll-col">
+            <h2 class="about-text">
+                I’m a web developer from a creative background. I enjoy building unique web experiences at the intersection of beauty and function.
+            </h2>
+            </div>  
+            <div class="testimonial-container about-scroll-col">
+                <p class="testimonial">
+                    "Throughout the entire process, Karl was quick, efficient, and easy to reach and communicate with. His design work was high quality and brought the website to life just as we imagined it; any corrections/additions we asked for were completed quickly, and his guidance throughout the process was extremely helpful as we navigated the world of website building and hosting."
+                    <br><br>
+                    -Owen Baekey, weird face
+                </p>
+            </div>
+        </div>
+        
     </section>
     <section id="work">
         <div class="work-container">
@@ -73,7 +85,7 @@
                         <a target="_blank" href="https://kwtietze.github.io/royalty-calculator/" class="work-list-item">02. ROYALTY CALCULATOR</a>
                     </li>
                     <li>
-                        <a target="_blank" href="https://sfchoirschool.wordpress.com/" class="work-list-item">03. SF CHOIR SCHOOL</a>
+                        <a target="_blank" href="https://sfchoirschool.org/" class="work-list-item">03. SF CHOIR SCHOOL</a>
                     </li>
                     <li>
                         <a target="_blank" href="https://kwtietze.github.io/Base-Apparel-Clone/" class="work-list-item">04. BASE APPAREL</a>
@@ -95,7 +107,7 @@
                 <input type="text" placeholder="Name">
                 <input type="text" placeholder="Email">
                 <input type="text" placeholder="Message">
-                <input class="submit-btn" type="button" value="SUBMIT">
+                <button class="submit-btn">SUBMIT</button>
                 <div class="social-container">
                     <a target="_blank" href="https://www.linkedin.com/in/karl-tietze-5470381b5/"><i class="fa-brands fa-linkedin"></i></a>
                     <a target="_blank" href="https://github.com/kwtietze"><i class="fa-brands fa-square-github"></i></a>
