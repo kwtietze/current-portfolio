@@ -102,21 +102,19 @@
     </section>
     <section id="contact">
         <div class="contact-container">
-            <div class="column-1">
                 <h3 class="contact-heading">CONTACT</h3>
-                <input type="text" placeholder="Name">
-                <input type="text" placeholder="Email">
-                <input type="text" placeholder="Message">
-                <button class="submit-btn">SUBMIT</button>
+                <form action="https://formsubmit.co/karltdrums@gmail.com" method="post">
+                    <input type="hidden" name="_subject" value="New submission from karltietze.com">
+                    <input type="text" name="name" placeholder="Name" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <textarea name="message" placeholder="Message" required></textarea>
+                    <button type="submit" class="submit-btn">SUBMIT</button>
+                </form>
                 <div class="social-container">
                     <a target="_blank" href="https://www.linkedin.com/in/karl-tietze-5470381b5/"><i class="fa-brands fa-linkedin"></i></a>
                     <a target="_blank" href="https://github.com/kwtietze"><i class="fa-brands fa-square-github"></i></a>
                     <a href="mailto:karltdrums@gmail.com"><i class="fa-solid fa-square-envelope mail-icon"></i></a>
                 </div>
-            </div>
-            <div class="column-2">
-                <img src="img/circle-text-green.svg" alt="Karl Tietze - Creative Web Development" class="circle-text contact-circle-text">
-            </div>
         </div>
     </section>
 

@@ -99,7 +99,7 @@ gsap.to('#about', {
         scrub: true
     },
     background: '#201D1E',
-    ease: 'none'
+    ease: Expo.easeIn
 })
 
 gsap.to('.work-list-item', {

@@ -42,24 +42,6 @@ html {
     display: block;
 }
 
-/* .outer-cursor {
-    position: fixed;
-    left: 10px;
-    width: 25px;
-    height: 25px;
-    transform: translate(-50%, -50%);
-    border: 1px solid #D36135;
-    mix-blend-mode: difference;
-    border-radius: 50%;
-    pointer-events: none;
-    transition: 0.1s;
-    z-index: 2;
-}
-
-.outer-cursor.hide {
-    display: none;
-} */
-
 
 section {
     min-height: 100vh;
@@ -340,19 +322,25 @@ h3 {
 
 .contact-container {
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
-    width: 100vw;
-    max-width: 1200px;
-    padding: 50px 0 50px 20px;  
+    align-items: center;
     overflow-x: hidden;
-
 }
 
 .contact-heading {
     color: var(--green);
 }
 
-input {
+form {
+    width: 80vw;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input, textarea {
     width: 100%;
     background: none;
     border: none;
@@ -363,12 +351,14 @@ input {
     color: var(--green);
 }
 
-input::placeholder {
+input::placeholder,
+textarea::placeholder {
     color: var(--green);
     font-size: 32px;
 }
 
-input:focus {
+input:focus,
+textarea:focus {
     border: none;
     outline: none;
 }
@@ -382,6 +372,8 @@ input:focus {
     padding: 20px;
     transition: var(--hover-transition-time);
     border-radius: 5px;
+    margin-top: 20px;
+    width: 100%;
 }
 
 .submit-btn:hover {
@@ -393,6 +385,8 @@ input:focus {
 .social-container {
     display: flex;
     justify-content: space-evenly;
+    width: 100vw;
+    max-width: 800px;
 }
 
 .social-container i {
@@ -408,14 +402,24 @@ input:focus {
 
 @media only screen and (max-width: 1000px) {
     h2 {
-        font-size: 50px;
+        font-size: 40px;
     }
 
 }
 
+@media only screen and (max-width: 700px) {
+    .cursor.show {
+        display: none;
+    }
+}
+
 @media only screen and (max-width: 600px) {
     h2 {
-        font-size: 40px;
+        font-size: 30px;
+    }
+
+    p {
+        font-size: 20px;
     }
     
     .work-list-item {
