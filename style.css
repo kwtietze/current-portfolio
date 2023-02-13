@@ -116,7 +116,7 @@ header a {
 }
 
 .menu-header a:hover,
-.menu-header button:hover {
+#close-menu-btn:hover {
     color: #D36135;
 }
 
