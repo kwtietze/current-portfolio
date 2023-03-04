@@ -81,7 +81,7 @@ gsap.to('.about-scroll-col', {
         trigger: '.about-scroll-container',
         toggleActions: 'restart pause pause reverse',
         start: 'bottom bottom',
-        scrub: true,
+        scrub: 2,
         pin: true,
         end: "+=2000"
     },
@@ -90,7 +90,7 @@ gsap.to('.about-scroll-col', {
 })
 
 
-gsap.to('#about', {
+gsap.to('#about, #loader', {
     scrollTrigger: {
         trigger: '#about',
         toggleActions: 'restart pause pause reverse',
@@ -111,5 +111,33 @@ gsap.to('.work-list-item', {
     opacity: 1,
     stagger: 0.2,
     duration: 1,
-    delay: 0.5
+    delay: 0.5,
+    pointerEvents: 'auto'
 })
+
+
+// Lenis
+
+const lenis = new Lenis({
+  duration: 1.2,
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
+  direction: 'vertical', // vertical, horizontal
+  gestureDirection: 'vertical', // vertical, horizontal, both
+  smooth: true,
+  mouseMultiplier: 1,
+  smoothTouch: false,
+  touchMultiplier: 2,
+  infinite: false,
+})
+
+//get scroll value
+lenis.on('scroll', ({ scroll, limit, velocity, direction, progress }) => {
+  console.log({ scroll, limit, velocity, direction, progress })
+})
+
+function raf(time) {
+  lenis.raf(time)
+  requestAnimationFrame(raf)
+}
+
+requestAnimationFrame(raf)

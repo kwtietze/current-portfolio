@@ -301,6 +301,7 @@ h3 {
     display: inline-block;
     color: var(--orange);
     transition: var(--hover-transition-time);
+    pointer-events: none;
 }
 
 .work-list-item:hover {
