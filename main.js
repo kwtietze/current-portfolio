@@ -81,7 +81,7 @@ gsap.to('.about-scroll-col', {
         trigger: '.about-scroll-container',
         toggleActions: 'restart pause pause reverse',
         start: 'bottom bottom',
-        scrub: 2,
+        scrub: 1,
         pin: true,
         end: "+=2000"
     },
